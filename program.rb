@@ -4,6 +4,7 @@ require_relative 'championship'
 require_relative 'player'
 require_relative 'team'
 require_relative 'match'
+require_relative 'point'
 
 class Program
 
@@ -130,16 +131,10 @@ class Program
 		order_matches.find do |match|
 			match.finish==false 
 
-			formnext= form.new("Ingrese informacion:" ,team_a: "Ingrese cantidad de goles de #{match.team_a} "
-				match.team_a.add_point("")
+			Point.add_point(match.team_a, match.team_b)
 
-		
-		formt = Form.new("Datos del nuevo equipo", name_team: "Nombre del equipo: " )
-		formt.ask_for(:name_team)
 
-		@championship.add_team( Team.new(formt.get_data[0]) )
-			formnext= form.new("Ingrese informacion:" ,team_a: "Ingrese cantidad de goles de #{match.team_a} ", team_b: "Ingrese cantidad de goles de #{match.team_b}")
-	        @result_match=formnext.get_data[0] , team_b.add_point=formnext.get_data[1]
+	        match.finish=false
 	    end
 	end
 

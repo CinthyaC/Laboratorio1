@@ -4,11 +4,11 @@ class Team
   def initialize(name)
     @name_team=name
     @players=[]
-    @points = [3, 1 ,0]
     @played_matches=0
     @win_matches=0
     @tied_matches=0
     @lose_matches=0
+    @points = [3, 1 ,0]
   end
 
   def add_player(player)
@@ -16,8 +16,7 @@ class Team
   end
 
   def add_point(puntos)
-  	form = Form.new('')
-  	@points = form.select_from_list("Ingrese puntos", puntos)
+    @points=puntos
   end
 
   def add_played_matches(played_matches_aux)
